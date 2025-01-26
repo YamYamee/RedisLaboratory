@@ -1,0 +1,24 @@
+spring:
+    datasource:
+        url: jdbc:h2:mem:testdb
+        driverClassName: org.h2.Driver
+        username: sa
+        password: password
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+    h2:
+        console:
+            enabled: true  # H2 ?? ???
+    data:
+        redis:
+            host: localhost
+            port: 6379
+            password: ''  # ????? ???? ??
+            database: 0   # Redis ?? DB (??? 0)
+            timeout: 2000  # ?? ???? (??? ??)
+            lettuce:
+                pool:
+                    max-active: 8           # ?? ?? ?
+                    max-idle: 8             # ?? ?? ?? ?
+                    min-idle: 0             # ?? ?? ?? ?
+                    max-wait: 10000         # ?? ?? ?? (??? ??)
