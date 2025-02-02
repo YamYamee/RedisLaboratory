@@ -25,6 +25,7 @@ class RedisApplicationTests {
     @Autowired
     private MemberRepository memberRepository;
 
+
     @BeforeEach
     void setUp() {
 
@@ -41,7 +42,7 @@ class RedisApplicationTests {
 
     @Test
     void testRedis() {
-        // 첫 번째 호출 시간 측정
+/*        // 첫 번째 호출 시간 측정
         long startTime1 = System.nanoTime();
         System.out.println(memberService.getMember(100L));
         long endTime1 = System.nanoTime();
@@ -56,6 +57,13 @@ class RedisApplicationTests {
         long duration2 = endTime2 - startTime2; // 두 번째 호출에 걸린 시간 (나노초 단위)
         System.out.println("두 번째 호출에 걸린 시간: " + duration2 + " 나노초");
 
-        System.out.println(memberRepository.findById(100L).get().getId());
+        System.out.println(memberRepository.findById(100L).get().getId());*/
+
+        memberService.addMember(1L);
+        memberService.addMember(2L);
+        memberService.addMember(3L);
+        memberService.addMember(4L);
+        memberService.getAllMembers();
+
     }
 }
